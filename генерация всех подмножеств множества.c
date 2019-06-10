@@ -1,12 +1,12 @@
-//Генерирование все подмножеств заданного множества
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 int main()
 {
-    int *M=NULL; //--множество
+    int *M=NULL;
     int num;
-    int w; //кол-во элементов множества
+    int w; 
     int i, j, n;
     printf ("Enter the number of elements in your set:");
     scanf ("%i", &num);
@@ -23,12 +23,12 @@ int main()
         }
     }
     n = pow(2, w);
-    for ( i = 0; i < n; i++ ) //перебор битовых масок
+    for ( i = 0; i < n; i++ ) 
     {
         printf("{");
-        for ( j = 0; j < w; j++ ) //перебор битов в маске
-            if ( i & (1 << j) ) //если j-й бит установлен
-               printf("%d", M[j]); //то выводим j-й элемент множества
+        for ( j = 0; j < w; j++ ) 
+            if ( i & (1 << j) ) 
+               printf("%d", M[j]); 
         printf("}\n");
     }
     free (M);
